@@ -23,10 +23,7 @@ public class GameManager : MonoBehaviour
     {
         _isLoading = true;
         _controllers = FindObjectsOfType<Controller>();
-        foreach (var controller in _controllers)
-        {
-            controller.enabled = false;
-        }
+
     }
 
     // Update is called once per frame
