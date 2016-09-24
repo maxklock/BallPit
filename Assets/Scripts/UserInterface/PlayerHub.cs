@@ -23,7 +23,7 @@
         // Update is called once per frame
         private void Update()
         {
-            Text.text = Player.FallDown.ToString();
+            Text.text = Player.Collected.ToString();
             Slider.maxValue = Player.MaxEnergie;
             Slider.value = Player.Energie;
         }

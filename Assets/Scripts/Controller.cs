@@ -25,11 +25,7 @@ public class Controller : MonoBehaviour
     // Use this for initialization
     private void Start()
     {
-        FallDown = 0;
-        BallRemover.BallRemoved += (sender, args) =>
-        {
-            FallDown++;
-        };
+        Collected = 0;
     }
 
     // Update is called once per frame
@@ -63,11 +59,23 @@ public class Controller : MonoBehaviour
         transform.Translate(move);
     }
 
+    private void OnCollisionEnter(Collision coll)
+    {
+        var item = coll.gameObject.GetComponent<Item>() ?? coll.gameObject.GetComponentInChildren<Item>() ?? coll.gameObject.GetComponentInParent<Item>();
+        if (item == null)
+        {
+            return;
+        }
+
+        Destroy(item.gameObject);
+        Collected++;
+    }
+
     #endregion
 
     #region properties
 
-    public int FallDown { get; set; }
+    public int Collected { get; set; }
 
     #endregion
 }

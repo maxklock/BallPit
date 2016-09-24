@@ -24,7 +24,7 @@
         // Update is called once per frame
         private void Update()
         {
-            Slider.maxValue = _spawner.MaxObjects;
+            Slider.maxValue = _spawner.MaxBalls;
             Slider.value = BallSpawner.BallCount;
 
             if (Slider.value >= Slider.maxValue)

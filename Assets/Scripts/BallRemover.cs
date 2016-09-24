@@ -4,22 +4,17 @@ using UnityEngine;
 
 public class BallRemover : MonoBehaviour
 {
-    #region events
-
-    public static event EventHandler BallRemoved;
-
-    #endregion
 
     #region methods
 
     private void OnTriggerEnter(Collider coll)
     {
-        BallSpawner.BallCount--;
-        Destroy(coll.gameObject);
-        if (BallRemoved != null)
+        if (coll.GetComponent<Ball>() != null)
         {
-            BallRemoved.Invoke(this, null);
+            BallSpawner.BallCount--;
         }
+
+        Destroy(coll.gameObject);
     }
 
     // Use this for initialization
