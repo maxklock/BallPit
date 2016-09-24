@@ -1,5 +1,7 @@
 ﻿using Behaviours;
 
+using Objects;
+
 using Spawner;
 
 using UnityEngine;
@@ -18,7 +20,8 @@ public class Manager : MonoBehaviour
 
     public BallRemover Remover;
 
-    public GameObject Room;
+    public Room[] Rooms;
+    private Room _currentRoom;
     private ShakeIt _shakeIt;
 
     public Loading LoadingScreen;
@@ -35,7 +38,15 @@ public class Manager : MonoBehaviour
             player.gameObject.SetActive(false);
         }
 
-        _shakeIt = Room.GetComponent<ShakeIt>();
+        foreach (var room in Rooms)
+        {
+            room.gameObject.SetActive(room.Game == Game);
+            if (room.Game == Game)
+            {
+                _currentRoom = room;
+            }
+        }
+        _shakeIt = _currentRoom.GetComponent<ShakeIt>();
         if (_shakeIt != null)
         {
             _shakeIt.IsActive = true;
@@ -67,11 +78,6 @@ public class Manager : MonoBehaviour
             {
                 player.gameObject.SetActive(true);
                 player.GetComponent<CollectItems>().enabled = Game == GameType.Collect;
-            }
-
-            foreach (var sort in Room.GetComponentsInChildren<SortItems>())
-            {
-                sort.enabled = Game == GameType.Sort;
             }
         }
     }
