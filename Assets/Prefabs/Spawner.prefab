@@ -21,6 +21,7 @@ GameObject:
   - 4: {fileID: 4000013597576278}
   - 65: {fileID: 65000010092150330}
   - 114: {fileID: 114000012960868076}
+  - 114: {fileID: 114000013243107548}
   m_Layer: 0
   m_Name: Spawner
   m_TagString: Untagged
@@ -64,8 +65,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e5795a2fd4c5694ba4335bbd4415c51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxBalls: 1000
   Ball: {fileID: 114000012293232044, guid: 5892aae3cce1afe459072a775a86e340, type: 2}
-  BallsPerFrame: 2
+  BallsPerFrame: 5
+  MaxBalls: 1000
+--- !u!114 &114000013243107548
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012634157378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f675e5986b45dd40814e9756a45bb05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   Item: {fileID: 114000011213800584, guid: f3d7d8d4c441f1c4792952adbb0b01dc, type: 2}
   ItemsPerMinute: 30

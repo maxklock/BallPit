@@ -1,20 +1,13 @@
 ﻿using UnityEngine;
 
-public class BallSpawner : MonoBehaviour
+public class ItemSpawner : MonoBehaviour
 {
     #region member vars
 
     private Collider _collider;
-    public Ball Ball;
-    public int BallsPerFrame = 2;
-
-    public int MaxBalls = 1000;
-
-    #endregion
-
-    #region constants
-
-    public static int BallCount;
+    private float _timer;
+    public Item Item;
+    public int ItemsPerMinute = 10;
 
     #endregion
 
@@ -23,25 +16,26 @@ public class BallSpawner : MonoBehaviour
     public void Spawn()
     {
         var pos = Utils.RandomBoundsPosition(_collider.bounds);
-        var obj = Instantiate(Ball);
+        var obj = Instantiate(Item);
         obj.transform.position = pos;
         obj.transform.parent = transform;
-
-        BallCount++;
     }
 
     // Use this for initialization
     private void Start()
     {
         _collider = GetComponent<Collider>();
+        _timer = 0;
     }
 
     // Update is called once per frame
     private void Update()
     {
-        for (var i = 0; i < BallsPerFrame && BallCount < MaxBalls; i++)
+        _timer -= Time.deltaTime;
+        if (_timer <= 0)
         {
             Spawn();
+            _timer = 60f / ItemsPerMinute;
         }
     }
 
