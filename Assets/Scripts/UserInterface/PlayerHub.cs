@@ -37,7 +37,7 @@
                 Text.text = _collect.Collected.ToString();
             }
 
-            if (_sort != null)
+            if (_sort != null && _sort.enabled)
             {
                 Text.text = _sort.Collected.ToString();
             }

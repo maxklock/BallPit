@@ -13,6 +13,8 @@
 
         public Slider Slider;
 
+        public bool IsLoading { get; set; }
+
         #endregion
 
         #region methods
@@ -20,6 +22,7 @@
         // Use this for initialization
         private void Start()
         {
+            IsLoading = true;
             _spawner = FindObjectOfType<BallSpawner>();
         }
 
@@ -31,7 +34,7 @@
 
             if (Slider.value >= Slider.maxValue)
             {
-                enabled = false;
+                IsLoading = false;
             }
         }
 

@@ -8,6 +8,13 @@ public enum PlayerId
     Four = 4
 }
 
+public enum GameType
+{
+    Collect,
+    Sort,
+    ChangeRoom
+}
+
 public enum SortColor
 {
     Red,

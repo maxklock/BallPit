@@ -176,7 +176,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 40, y: 45, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
 --- !u!1001 &501820112
 Prefab:
   m_ObjectHideFlags: 0
@@ -220,6 +220,10 @@ Prefab:
         type: 2}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000010962908294, guid: 77204e02f9fc1ee49a575ad30f3bb799, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 77204e02f9fc1ee49a575ad30f3bb799, type: 2}
@@ -286,7 +290,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
 --- !u!1001 &1293029767
 Prefab:
   m_ObjectHideFlags: 0
@@ -392,26 +396,6 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1293029767}
   m_Script: {fileID: 11500000, guid: 1716bc53c4fef2e4db7a17d167ef56e3, type: 3}
---- !u!1 &1887544562 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1000012634157378, guid: 77204e02f9fc1ee49a575ad30f3bb799,
-    type: 2}
-  m_PrefabInternal: {fileID: 501820112}
---- !u!114 &1887544563
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1887544562}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6b286ae936c4a342b5e445044c4edc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Balls:
-  - {fileID: 114000010088700336, guid: 39a571d8712609945b13aeb26c9a703b, type: 2}
-  - {fileID: 114000013939835850, guid: 264f6dccde849314d8a2ceffe925ddac, type: 2}
-  MaxBalls: 200
 --- !u!1001 &1895092933
 Prefab:
   m_ObjectHideFlags: 0
