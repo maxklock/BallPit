@@ -1,5 +1,13 @@
 ﻿using UnityEngine;
 
+public enum PlayerId
+{
+    One = 1,
+    Two = 2,
+    Three = 3,
+    Four = 4
+}
+
 public class Controller : MonoBehaviour
 {
     #region member vars
@@ -7,6 +15,8 @@ public class Controller : MonoBehaviour
     public float Energie = 10;
     public int MaxEnergie = 10;
     public float Speed = 2;
+
+    public PlayerId Id;
 
     #endregion
 
@@ -25,10 +35,10 @@ public class Controller : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        var move = new Vector3(Input.GetAxis("Horizontal") * Time.deltaTime, 0, Input.GetAxis("Vertical") * Time.deltaTime);
+        var move = new Vector3(Input.GetAxis("Horizontal " + (int)Id) * Time.deltaTime, 0, Input.GetAxis("Vertical " + (int)Id) * Time.deltaTime);
 
         move *= Speed;
-        if (Input.GetAxis("Fire1") > 0)
+        if (Input.GetAxis("Speed " + (int)Id) > 0)
         {
             Energie -= Time.deltaTime * 3;
             if (Energie < 0)

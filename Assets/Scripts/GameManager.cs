@@ -9,8 +9,10 @@ public class GameManager : MonoBehaviour
     #region member vars
 
     public Loading Loading;
-    public Controller Player;
     public ShakeIt Room;
+
+    private bool _isLoading;
+    private Controller[] _controllers;
 
     #endregion
 
@@ -19,16 +21,25 @@ public class GameManager : MonoBehaviour
     // Use this for initialization
     private void Start()
     {
-        Player.enabled = false;
+        _isLoading = true;
+        _controllers = FindObjectsOfType<Controller>();
+        foreach (var controller in _controllers)
+        {
+            controller.enabled = false;
+        }
     }
 
     // Update is called once per frame
     private void Update()
     {
-        if (!Player.enabled && !Loading.enabled)
+        if (_isLoading && !Loading.enabled)
         {
+            _isLoading = true;
             Loading.gameObject.SetActive(false);
-            Player.enabled = true;
+            foreach (var controller in _controllers)
+            {
+                controller.enabled = true;
+            }
             Room.IsActive = false;
         }
     }
