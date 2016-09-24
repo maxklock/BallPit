@@ -1,5 +1,7 @@
 ﻿namespace UserInterface
 {
+    using System.Linq;
+
     using Behaviours;
 
     using UnityEngine;
@@ -14,6 +16,7 @@
         public Slider Slider;
 
         private CollectItems _collect;
+        private SortItems _sort;
 
         #endregion
 
@@ -23,6 +26,7 @@
         private void Start()
         {
             _collect = Player.GetComponent<CollectItems>();
+            _sort = FindObjectsOfType<SortItems>().FirstOrDefault(p => p.Color == Player.Color);
         }
 
         // Update is called once per frame
@@ -31,6 +35,11 @@
             if (_collect != null && _collect.enabled)
             {
                 Text.text = _collect.Collected.ToString();
+            }
+
+            if (_sort != null)
+            {
+                Text.text = _sort.Collected.ToString();
             }
 
             Slider.maxValue = Player.MaxEnergie;

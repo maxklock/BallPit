@@ -1,5 +1,9 @@
 ﻿using System;
 
+using Objects;
+
+using Spawner;
+
 using UnityEngine;
 
 public class BallRemover : MonoBehaviour

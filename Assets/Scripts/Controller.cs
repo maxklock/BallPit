@@ -1,13 +1,5 @@
 ﻿using UnityEngine;
 
-public enum PlayerId
-{
-    One = 1,
-    Two = 2,
-    Three = 3,
-    Four = 4
-}
-
 public class Controller : MonoBehaviour
 {
     #region member vars
@@ -15,6 +7,8 @@ public class Controller : MonoBehaviour
     public float Energie = 10;
 
     public PlayerId Id;
+    public SortColor Color;
+
     public int MaxEnergie = 10;
     public float Speed = 2;
 

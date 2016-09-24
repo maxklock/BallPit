@@ -1,17 +1,20 @@
-﻿using UnityEngine;
-
-namespace Behaviours
+﻿namespace Behaviours
 {
+    using System.Linq;
+
     using Objects;
 
-    public class CollectItems : MonoBehaviour
+    using UnityEngine;
+
+    public class SortItems : MonoBehaviour
     {
         #region methods
+
+        public SortColor Color;
 
         // Use this for initialization
         private void Start()
         {
-            Collected = 0;
         }
 
         // Update is called once per frame
@@ -21,8 +24,8 @@ namespace Behaviours
 
         private void OnCollisionEnter(Collision coll)
         {
-            var item = coll.gameObject.GetComponent<Item>() ?? coll.gameObject.GetComponentInChildren<Item>() ?? coll.gameObject.GetComponentInParent<Item>();
-            if (item == null)
+            var item = coll.gameObject.GetComponent<SortBall>() ?? coll.gameObject.GetComponentInChildren<SortBall>() ?? coll.gameObject.GetComponentInParent<SortBall>();
+            if (item == null || item.Color != Color)
             {
                 return;
             }
