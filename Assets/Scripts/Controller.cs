@@ -13,10 +13,10 @@ public class Controller : MonoBehaviour
     #region member vars
 
     public float Energie = 10;
-    public int MaxEnergie = 10;
-    public float Speed = 2;
 
     public PlayerId Id;
+    public int MaxEnergie = 10;
+    public float Speed = 2;
 
     #endregion
 
@@ -25,7 +25,6 @@ public class Controller : MonoBehaviour
     // Use this for initialization
     private void Start()
     {
-        Collected = 0;
     }
 
     // Update is called once per frame
@@ -58,24 +57,6 @@ public class Controller : MonoBehaviour
 
         transform.Translate(move);
     }
-
-    private void OnCollisionEnter(Collision coll)
-    {
-        var item = coll.gameObject.GetComponent<Item>() ?? coll.gameObject.GetComponentInChildren<Item>() ?? coll.gameObject.GetComponentInParent<Item>();
-        if (item == null)
-        {
-            return;
-        }
-
-        Destroy(item.gameObject);
-        Collected++;
-    }
-
-    #endregion
-
-    #region properties
-
-    public int Collected { get; set; }
 
     #endregion
 }

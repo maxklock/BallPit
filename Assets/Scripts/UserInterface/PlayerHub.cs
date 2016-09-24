@@ -1,5 +1,7 @@
 ﻿namespace UserInterface
 {
+    using Behaviours;
+
     using UnityEngine;
     using UnityEngine.UI;
 
@@ -11,6 +13,8 @@
         public Text Text;
         public Slider Slider;
 
+        private CollectItems _collect;
+
         #endregion
 
         #region methods
@@ -18,12 +22,17 @@
         // Use this for initialization
         private void Start()
         {
+            _collect = Player.GetComponent<CollectItems>();
         }
 
         // Update is called once per frame
         private void Update()
         {
-            Text.text = Player.Collected.ToString();
+            if (_collect != null && _collect.enabled)
+            {
+                Text.text = _collect.Collected.ToString();
+            }
+
             Slider.maxValue = Player.MaxEnergie;
             Slider.value = Player.Energie;
         }
