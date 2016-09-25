@@ -27,9 +27,6 @@ public class CentralCam : MonoBehaviour
         //cam.transform.rotation = Quaternion.identity;
 	    cam.transform.position = Offset + center + new Vector3(0, 0, 0);
 
-        //cam.transform.LookAt(center);
-
-        Debug.Log(center);
 
 	}
 }
