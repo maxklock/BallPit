@@ -32,12 +32,12 @@
         // Update is called once per frame
         private void Update()
         {
-            if (_collect != null && _collect.enabled)
+            if (_collect != null && _collect.isActiveAndEnabled)
             {
                 Text.text = _collect.Collected.ToString();
             }
 
-            if (_sort != null && _sort.enabled)
+            if (_sort != null && _sort.isActiveAndEnabled)
             {
                 Text.text = _sort.Collected.ToString();
             }
