@@ -90,6 +90,12 @@ NavMeshSettings:
     cellSize: 0.16666667
     manualCellSize: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &141776211 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114000012623970234, guid: 77204e02f9fc1ee49a575ad30f3bb799,
+    type: 2}
+  m_PrefabInternal: {fileID: 501820112}
+  m_Script: {fileID: 11500000, guid: 5e5795a2fd4c5694ba4335bbd4415c51, type: 3}
 --- !u!1 &162526337 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1000012761755262, guid: 3d5c6767500d19f4a9afa00892ec954e,
@@ -106,8 +112,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8565d3c36267a984da5e8470757a8599, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TimeToDespawn: 1
   DespawnSpeed: 0.9
+  TimeToDespawn: 1
 --- !u!114 &162526339
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -204,8 +210,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8565d3c36267a984da5e8470757a8599, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TimeToDespawn: 1
   DespawnSpeed: 0.9
+  TimeToDespawn: 1
 --- !u!114 &326651735
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -386,6 +392,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114000010574575694, guid: 3d5c6767500d19f4a9afa00892ec954e,
+        type: 2}
+      propertyPath: InfluencedObjects.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4000011979746942, guid: 3d5c6767500d19f4a9afa00892ec954e, type: 2}
       propertyPath: m_LocalPosition.x
       value: -0.05
@@ -450,6 +461,11 @@ Prefab:
       propertyPath: InfluencedObjects.Array.data[1]
       value: 
       objectReference: {fileID: 1449925000}
+    - target: {fileID: 114000010574575694, guid: 3d5c6767500d19f4a9afa00892ec954e,
+        type: 2}
+      propertyPath: InfluencedObjects.Array.data[2]
+      value: 
+      objectReference: {fileID: 1680374360}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3d5c6767500d19f4a9afa00892ec954e, type: 2}
   m_IsPrefabParent: 0
@@ -655,7 +671,7 @@ GameObject:
   m_PrefabParentObject: {fileID: 1000010055138744, guid: 66f78f10fb1a83242a44fcdc46f3b003,
     type: 2}
   m_PrefabInternal: {fileID: 1908906381}
---- !u!114 &1349175324
+--- !u!114 &1349175325
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -663,9 +679,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1349175319}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 81db5f607778d6948a6512fa4e653696, type: 3}
+  m_Script: {fileID: 11500000, guid: 6ba8b5ae38d55da4db2cc75d437dc922, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ballSpawner: {fileID: 141776211}
+  RoomsInfluenced:
+  - {fileID: 326651735}
+  - {fileID: 1680374360}
+  - {fileID: 1640074982}
+  - {fileID: 162526339}
 --- !u!1001 &1394428732
 Prefab:
   m_ObjectHideFlags: 0
@@ -673,6 +695,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114000010574575694, guid: 3d5c6767500d19f4a9afa00892ec954e,
+        type: 2}
+      propertyPath: InfluencedObjects.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4000011979746942, guid: 3d5c6767500d19f4a9afa00892ec954e, type: 2}
       propertyPath: m_LocalPosition.x
       value: -10.11
@@ -742,6 +769,11 @@ Prefab:
       propertyPath: InfluencedObjects.Array.data[1]
       value: 
       objectReference: {fileID: 1054793502}
+    - target: {fileID: 114000010574575694, guid: 3d5c6767500d19f4a9afa00892ec954e,
+        type: 2}
+      propertyPath: InfluencedObjects.Array.data[2]
+      value: 
+      objectReference: {fileID: 1640074982}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3d5c6767500d19f4a9afa00892ec954e, type: 2}
   m_IsPrefabParent: 0
@@ -809,8 +841,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8565d3c36267a984da5e8470757a8599, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TimeToDespawn: 1
   DespawnSpeed: 0.9
+  TimeToDespawn: 1
 --- !u!114 &1640074982
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -838,8 +870,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8565d3c36267a984da5e8470757a8599, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TimeToDespawn: 1
   DespawnSpeed: 0.9
+  TimeToDespawn: 1
 --- !u!114 &1680374360
 MonoBehaviour:
   m_ObjectHideFlags: 0
