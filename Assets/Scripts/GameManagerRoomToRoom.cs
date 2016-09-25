@@ -1,15 +1,33 @@
-﻿using UnityEngine;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 using Spawner;
 
+using UnityEngine;
+
 public class GameManagerRoomToRoom : MonoBehaviour
 {
-    public BallSpawner ballSpawner; 
+    #region member vars
+
+    public BallSpawner ballSpawner;
     public List<InfluencedObject> RoomsInfluenced = new List<InfluencedObject>();
 
     private StageRoom stRoom = StageRoom.A;
+
+    #endregion
+
+    #region enums
+
+    public enum StageRoom
+    {
+        A,
+        B,
+        C,
+        D
+    }
+
+    #endregion
+
+    #region methods
 
     // Use this for initialization
     void Start()
@@ -22,25 +40,29 @@ public class GameManagerRoomToRoom : MonoBehaviour
         switch (stRoom)
         {
             case StageRoom.A:
-                if (RoomsInfluenced[0].IsActivated)
+                if (RoomsInfluenced[0].gameObject.GetComponent<CleanRoom>().RoomCleaned)
                 {
                     stRoom = StageRoom.B;
-                    ballSpawner.transform.position = RoomsInfluenced[0].transform.position;
-
+                    ballSpawner.transform.parent.position = RoomsInfluenced[1].transform.position;
+                }
+                break;
+            case StageRoom.B:
+                if (RoomsInfluenced[1].gameObject.GetComponent<CleanRoom>().RoomCleaned)
+                {
+                    stRoom = StageRoom.C;
+                    ballSpawner.transform.parent.position = RoomsInfluenced[2].transform.position;
+                }
+                break;
+            case StageRoom.C:
+                if (RoomsInfluenced[2].gameObject.GetComponent<CleanRoom>().RoomCleaned)
+                {
+                    stRoom = StageRoom.D;
+                    ballSpawner.transform.parent.position = RoomsInfluenced[3].transform.position;
                 }
                 break;
 
         }
-
     }
 
-    public enum StageRoom
-    {
-        A,
-        B,
-        C,
-        D
-    }
-
+    #endregion
 }
-

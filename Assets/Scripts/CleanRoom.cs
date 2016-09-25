@@ -1,78 +1,89 @@
-﻿using UnityEngine;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
+
 using Objects;
+
+using Spawner;
+
+using UnityEngine;
 
 [RequireComponent(typeof(InfluencedObject))]
 public class CleanRoom : MonoBehaviour
 {
+    #region member vars
 
-
-    public float TimeToDespawn = 1f;
-    [Range(0.01f,1f)]
-    public float DespawnSpeed = 0.9f;
-
-    List<Ball> balls;
-
+    private bool _ended;
 
     private InfluencedObject _state;
-    private bool _ended = false;
 
-    // Use this for initialization
-    void Start()
-    {
-        _state = this.gameObject.GetComponent<InfluencedObject>();
-    }
+    List<GameObject> balls;
 
+    [Range(0.01f, 1f)]
+    public float DespawnSpeed = 0.9f;
 
-    // Update is called once per frame
-    void Update ()
-    {
-
-        if (_state.IsActivated && !_ended) StartCoroutine(CleanUpRoom());
+    public float TimeToDespawn = 1f;
 
 
-	    if (balls != null && balls.Count > 0)
-	    {
-	        foreach (var ball in balls)
-	        {
-	            ball.gameObject.transform.localScale *= DespawnSpeed;
-	        }
-	    }
-	
-	}
+    #endregion
+
+    #region methods
 
 
     private IEnumerator CleanUpRoom()
     {
         _ended = true;
-        balls = new List<Ball>();
+        balls = new List<GameObject>();
 
-        balls.AddRange(FindObjectsOfType<Ball>());
+        balls.AddRange(GameObject.FindGameObjectsWithTag("Ball"));
+
+        
 
         yield return new WaitForSeconds(TimeToDespawn);
 
         if (balls != null && balls.Count > 0)
         {
-            foreach (var ball in balls)
+            for (int i = balls.Count - 1; i >= 0; i--)
             {
-
-
-                GameObject.Destroy(ball.gameObject);
-                
+                Destroy(balls[i].gameObject);
+                balls.RemoveAt(i);
             }
         }
+
         balls.Clear();
-
-
+        BallSpawner.BallCount = 0;
+        RoomCleaned = true;
     }
 
- 
-
-    public void DeleteAllBalls()
+    // Use this for initialization
+    void Start()
     {
-
-
+        _state = gameObject.GetComponent<InfluencedObject>();
     }
 
+    // Update is called once per frame
+    void Update()
+    {
+        if(RoomCleaned) return;
+
+        if (_state.IsActivated && !_ended) StartCoroutine(CleanUpRoom());
+
+        if (balls != null && balls.Count > 0 && _ended)
+        {
+            for (int i = balls.Count - 1; i >= 0; i--)
+            {
+                if (balls[i] == null) balls.Remove(balls[i]);
+                else balls[i].gameObject.transform.localScale *= DespawnSpeed;
+            }
+        }
+
+        
+    }
+
+    #endregion
+
+    #region properties
+
+    public bool RoomCleaned { get; private set; }
+
+    #endregion
 }
