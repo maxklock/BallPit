@@ -10,7 +10,7 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: DefaultCompany
+  companyName: Maximilian Klockmann
   productName: BallPit
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
@@ -175,7 +175,13 @@ PlayerSettings:
     banner: {fileID: 0}
   androidGamepadSupportLevel: 0
   resolutionDialogBanner: {fileID: 0}
-  m_BuildTargetIcons: []
+  m_BuildTargetIcons:
+  - m_BuildTarget: 
+    m_Icons:
+    - serializedVersion: 2
+      m_Icon: {fileID: 2800000, guid: 18fde8734c58e394e94cf2a3da08e5fe, type: 3}
+      m_Width: 128
+      m_Height: 128
   m_BuildTargetBatching: []
   m_BuildTargetGraphicsAPIs: []
   webPlayerTemplate: APPLICATION:Default
@@ -337,15 +343,26 @@ PlayerSettings:
   spritePackerPolicy: 
   scriptingDefineSymbols: {}
   metroPackageName: BallPit
-  metroPackageVersion: 
+  metroPackageVersion: 1.0.0.0
   metroCertificatePath: 
   metroCertificatePassword: 
   metroCertificateSubject: 
   metroCertificateIssuer: 
   metroCertificateNotAfter: 0000000000000000
   metroApplicationDescription: BallPit
-  wsaImages: {}
-  metroTileShortName: 
+  wsaImages:
+    65716: Assets/Icons/default_90px.png
+    65736: 
+    720996: Assets/Icons/default_150px.png
+    852224: Assets/Icons/default_256px.png
+    917604: Assets/Icons/default_70px.png
+    983140: Assets/Icons/default_310px.png
+    2031716: Assets/Icons/default_44px.png
+    2097252: Assets/Icons/default_71px.png
+    2162788: Assets/Icons/default_150px.png
+    2228324: Assets/Icons/default_310px.png
+    2293860: Assets/Icons/default_310x150px.png
+  metroTileShortName: BallPit
   metroCommandLineArgsFile: 
   metroTileShowName: 0
   metroMediumTileShowName: 0
@@ -357,7 +374,31 @@ PlayerSettings:
   metroSplashScreenBackgroundColor: {r: 0.12941177, g: 0.17254902, b: 0.21568628,
     a: 1}
   metroSplashScreenUseBackgroundColor: 0
-  platformCapabilities: {}
+  platformCapabilities:
+    WindowsStoreApps:
+      AllJoyn: False
+      BlockedChatMessages: False
+      Bluetooth: False
+      Chat: False
+      CodeGeneration: False
+      EnterpriseAuthentication: False
+      HumanInterfaceDevice: False
+      InternetClient: False
+      InternetClientServer: False
+      Location: False
+      Microphone: False
+      MusicLibrary: False
+      Objects3D: False
+      PhoneCall: False
+      PicturesLibrary: False
+      PrivateNetworkClientServer: False
+      Proximity: False
+      RemovableStorage: False
+      SharedUserCertificates: False
+      UserAccountInformation: False
+      VideosLibrary: False
+      VoipCall: False
+      WebCam: False
   metroFTAName: 
   metroFTAFileTypes: []
   metroProtocolName: 
