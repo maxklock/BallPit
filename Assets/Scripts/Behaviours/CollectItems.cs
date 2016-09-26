@@ -4,6 +4,8 @@ namespace Behaviours
 {
     using Objects;
 
+    using Spawner;
+
     public class CollectItems : MonoBehaviour
     {
         #region methods
@@ -26,7 +28,7 @@ namespace Behaviours
             {
                 return;
             }
-
+            ItemSpawner.ItemCount--;
             Destroy(item.gameObject);
             Collected++;
         }
