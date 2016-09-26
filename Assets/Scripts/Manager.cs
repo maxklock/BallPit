@@ -1,5 +1,7 @@
 ﻿using Behaviours;
 
+using Level;
+
 using Objects;
 
 using Spawner;
@@ -29,6 +31,7 @@ public class Manager : MonoBehaviour
 
     private bool _isLoading;
     private bool _isMenu;
+    private ILevel _level;
 
     // Use this for initialization
     private void Start()
@@ -86,6 +89,7 @@ public class Manager : MonoBehaviour
             {
                 _shakeIt.IsActive = true;
             }
+            _level = _currentRoom.GetComponent<ILevel>();
 
             Spawner.BallSpawner.gameObject.SetActive(true);
             Spawner.ItemSpawner.gameObject.SetActive(Game == GameType.Collect);
@@ -113,6 +117,12 @@ public class Manager : MonoBehaviour
                 player.gameObject.SetActive(true);
                 player.GetComponent<CollectItems>().enabled = Game == GameType.Collect;
             }
+            return;
+        }
+
+        if (_level.HasWinner)
+        {
+            Debug.Log("And the winner is: " + _level.Winner);
         }
     }
 
