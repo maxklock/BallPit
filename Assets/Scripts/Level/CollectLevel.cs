@@ -20,7 +20,7 @@ public class CollectLevel : MonoBehaviour, ILevel
     private void Start()
     {
         HasWinner = false;
-        _collectItems = FindObjectsOfType<CollectItems>().Where(c => c.isActiveAndEnabled).ToArray();
+        _collectItems = new CollectItems[0];
     }
 
     // Update is called once per frame
@@ -30,6 +30,16 @@ public class CollectLevel : MonoBehaviour, ILevel
         {
             return;
         }
+
+        if (_collectItems.Length == 0)
+        {
+            _collectItems = FindObjectsOfType<CollectItems>();
+            if (_collectItems.Length > 0)
+            {
+                _collectItems = _collectItems.Where(c => c.isActiveAndEnabled).ToArray();
+            }
+        }
+
         foreach (var sorter in _collectItems)
         {
             if (sorter.Collected >= Count)

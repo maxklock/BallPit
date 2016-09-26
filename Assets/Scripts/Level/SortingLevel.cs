@@ -21,7 +21,7 @@
         private void Start()
         {
             HasWinner = false;
-            _sortItems = FindObjectsOfType<SortItems>().Where(c => c.isActiveAndEnabled).ToArray();
+            _sortItems = new SortItems[0];
         }
 
         // Update is called once per frame
@@ -31,6 +31,16 @@
             {
                 return;
             }
+
+            if (_sortItems.Length == 0)
+            {
+                _sortItems = FindObjectsOfType<SortItems>();
+                if (_sortItems.Length > 0)
+                {
+                    _sortItems = _sortItems.Where(c => c.isActiveAndEnabled).ToArray();
+                }
+            }
+
             foreach (var sorter in _sortItems)
             {
                 if (sorter.Collected >= Count)

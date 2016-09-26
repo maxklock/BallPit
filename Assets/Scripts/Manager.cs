@@ -28,6 +28,7 @@ public class Manager : MonoBehaviour
 
     public Loading LoadingScreen;
     public MainMenu MainMenu;
+    public GameOver GameOver;
 
     private bool _isLoading;
     private bool _isMenu;
@@ -41,6 +42,7 @@ public class Manager : MonoBehaviour
 
         MainMenu.gameObject.SetActive(true);
         LoadingScreen.gameObject.SetActive(false);
+        GameOver.gameObject.SetActive(false);
 
         foreach (var player in Players)
         {
@@ -122,7 +124,12 @@ public class Manager : MonoBehaviour
 
         if (_level.HasWinner)
         {
-            Debug.Log("And the winner is: " + _level.Winner);
+            foreach (var player in Players)
+            {
+                player.gameObject.SetActive(false);
+            }
+            GameOver.Winner = _level.Winner;
+            GameOver.gameObject.SetActive(true);
         }
     }
 
