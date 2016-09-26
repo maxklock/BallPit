@@ -1,4 +1,6 @@
-﻿using Behaviours;
+﻿using System.Linq;
+
+using Behaviours;
 
 using Level;
 
@@ -14,15 +16,13 @@ public class Manager : MonoBehaviour
 {
     #region methods
 
-    public Controller[] Players;
-
     public GameType Game;
-
     public Objects.Spawner Spawner;
-
     public BallRemover Remover;
 
-    public Room[] Rooms;
+    private Controller[] _players;
+    private PlayerHub[] _playerHubs;
+    private Room[] _rooms;
     private Room _currentRoom;
     private ShakeIt _shakeIt;
 
@@ -40,16 +40,25 @@ public class Manager : MonoBehaviour
         _isMenu = true;
         _isLoading = false;
 
+        _players = FindObjectsOfType<Controller>();
+        _rooms = FindObjectsOfType<Room>();
+        _playerHubs = FindObjectsOfType<PlayerHub>();
+
         MainMenu.gameObject.SetActive(true);
         LoadingScreen.gameObject.SetActive(false);
         GameOver.gameObject.SetActive(false);
 
-        foreach (var player in Players)
+        foreach (var player in _players)
         {
             player.gameObject.SetActive(false);
         }
 
-        foreach (var room in Rooms)
+        foreach (var hub in _playerHubs)
+        {
+            hub.gameObject.SetActive(false);
+        }
+
+        foreach (var room in _rooms)
         {
             room.gameObject.SetActive(false);
         }
@@ -70,7 +79,6 @@ public class Manager : MonoBehaviour
             }
 
             Game = MainMenu.GameMode;
-            // TODO PlayerCount;
 
             _isMenu = false;
             _isLoading = true;
@@ -78,7 +86,7 @@ public class Manager : MonoBehaviour
             MainMenu.gameObject.SetActive(false);
             LoadingScreen.gameObject.SetActive(true);
 
-            foreach (var room in Rooms)
+            foreach (var room in _rooms)
             {
                 room.gameObject.SetActive(room.Game == Game);
                 if (room.Game == Game)
@@ -114,17 +122,18 @@ public class Manager : MonoBehaviour
                 _shakeIt.IsActive = false;
             }
 
-            foreach (var player in Players)
+            for (var i = 0; i < _players.Length && i < MainMenu.PlayerCount; i++)
             {
-                player.gameObject.SetActive(true);
-                player.GetComponent<CollectItems>().enabled = Game == GameType.Collect;
+                _players[i].gameObject.SetActive(true);
+                _players[i].GetComponent<CollectItems>().enabled = Game == GameType.Collect;
+                _playerHubs.First(hub => hub.Player == _players[i]).gameObject.SetActive(true);
             }
             return;
         }
 
         if (_level.HasWinner)
         {
-            foreach (var player in Players)
+            foreach (var player in _players)
             {
                 player.gameObject.SetActive(false);
             }
