@@ -344,11 +344,11 @@ PlayerSettings:
   scriptingDefineSymbols: {}
   metroPackageName: BallPit
   metroPackageVersion: 1.0.0.0
-  metroCertificatePath: 
+  metroCertificatePath: P:\Unity\BallPit\Assets\WSATestCertificate.pfx
   metroCertificatePassword: 
-  metroCertificateSubject: 
-  metroCertificateIssuer: 
-  metroCertificateNotAfter: 0000000000000000
+  metroCertificateSubject: Maximilian Klockmann
+  metroCertificateIssuer: Maximilian Klockmann
+  metroCertificateNotAfter: 00cf460dbc37d301
   metroApplicationDescription: BallPit
   wsaImages:
     65716: Assets/Icons/default_90px.png

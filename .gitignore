@@ -29,3 +29,5 @@ sysinfo.txt
 *.apk
 *.unitypackage
 /*.DotSettings
+/Assets/*.pfx
+/Assets/*.pfx.meta
