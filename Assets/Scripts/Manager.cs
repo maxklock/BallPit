@@ -102,7 +102,7 @@ public class Manager : MonoBehaviour
             _level = _currentRoom.GetComponent<ILevel>();
 
             Spawner.BallSpawner.gameObject.SetActive(true);
-            Spawner.ItemSpawner.gameObject.SetActive(Game == GameType.Collect);
+            Spawner.ItemSpawner.gameObject.SetActive(Game == GameType.Collect || Game == GameType.ChangeRoom);
             Spawner.SortSpawner.gameObject.SetActive(Game == GameType.Sort);
             return;
         }
@@ -125,7 +125,7 @@ public class Manager : MonoBehaviour
             for (var i = 0; i < _players.Length && i < MainMenu.PlayerCount; i++)
             {
                 _players[i].gameObject.SetActive(true);
-                _players[i].GetComponent<CollectItems>().enabled = Game == GameType.Collect;
+                _players[i].GetComponent<CollectItems>().enabled = (Game == GameType.Collect || Game == GameType.ChangeRoom);
                 _playerHubs.First(hub => hub.Player == _players[i]).gameObject.SetActive(true);
             }
             return;
