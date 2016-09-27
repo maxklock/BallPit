@@ -50,6 +50,7 @@ public class CleanRoom : MonoBehaviour
         }
 
         balls.Clear();
+        ItemSpawner.ItemCount = 0;
         BallSpawner.BallCount = 0;
         RoomCleaned = true;
     }

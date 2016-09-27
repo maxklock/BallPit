@@ -11,7 +11,19 @@ namespace Spawner
         private Collider _collider;
         private float _timer;
         public Item Item;
+
+        public bool TimeBasedSpawning = true;
         public int ItemsPerMinute = 10;
+
+        public bool WaveBasedSpawning = false;
+        public int ItemsPerWave = 25;
+
+
+        #endregion
+
+        #region constants
+
+        public static int ItemCount;
 
         #endregion
 
@@ -23,6 +35,8 @@ namespace Spawner
             var obj = Instantiate(Item);
             obj.transform.position = pos;
             obj.transform.parent = transform;
+
+            ItemCount++;
         }
 
         // Use this for initialization
@@ -34,13 +48,30 @@ namespace Spawner
 
         // Update is called once per frame
         private void Update()
-        {
-            _timer -= Time.deltaTime;
-            if (_timer <= 0)
+        { 
+
+            if (TimeBasedSpawning)
             {
-                Spawn();
-                _timer = 60f / ItemsPerMinute;
+                _timer -= Time.deltaTime;
+                if (_timer <= 0)
+                {
+                    Spawn();
+                    _timer = 60f / ItemsPerMinute;
+                }
+
             }
+        }
+
+        public void SpawnWave()
+        {
+            if (WaveBasedSpawning)
+            {
+                for (int i = 0; i < ItemsPerWave; i++)
+                {
+                    Spawn();
+                }
+            }
+            
         }
 
         #endregion

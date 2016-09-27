@@ -17,6 +17,10 @@ public class BallRemover : MonoBehaviour
         {
             BallSpawner.BallCount--;
         }
+        if (coll.GetComponent<Item>() != null)
+        {
+            ItemSpawner.ItemCount--;
+        }
 
         Destroy(coll.gameObject);
     }
