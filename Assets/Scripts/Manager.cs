@@ -103,6 +103,7 @@ public class Manager : MonoBehaviour
 
             Spawner.BallSpawner.gameObject.SetActive(true);
             Spawner.ItemSpawner.gameObject.SetActive(Game == GameType.Collect || Game == GameType.ChangeRoom);
+            Spawner.ItemSpawner.TimeBasedSpawning = (Game == GameType.Collect);
             Spawner.SortSpawner.gameObject.SetActive(Game == GameType.Sort);
             return;
         }

@@ -18,6 +18,7 @@ public class RoomToRoom : MonoBehaviour, ILevel
     private CollectItems[] _collectItems;
 
     private bool _lastWaveSpawned;
+    private bool _firstWaveSpawned;
 
     private StageRoom _stRoom = StageRoom.A;
 
@@ -60,13 +61,19 @@ public class RoomToRoom : MonoBehaviour, ILevel
     void Start()
     {
         _collectItems = new CollectItems[0];
-        StartCoroutine(OnSpawn());
+        _firstWaveSpawned = false;
     }
 
     // Update is called once per frame
     void Update()
     {
         if (HasWinner) return;
+
+        if (!_firstWaveSpawned)
+        {
+            StartCoroutine(OnSpawn());
+            _firstWaveSpawned = true;
+        }
 
         if (_collectItems.Length == 0)
         {

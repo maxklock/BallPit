@@ -14,8 +14,7 @@ namespace Spawner
 
         public bool TimeBasedSpawning = true;
         public int ItemsPerMinute = 10;
-
-        public bool WaveBasedSpawning = false;
+        
         public int ItemsPerWave = 25;
 
 
@@ -64,14 +63,10 @@ namespace Spawner
 
         public void SpawnWave()
         {
-            if (WaveBasedSpawning)
+            for (int i = 0; i < ItemsPerWave; i++)
             {
-                for (int i = 0; i < ItemsPerWave; i++)
-                {
-                    Spawn();
-                }
+                Spawn();
             }
-            
         }
 
         #endregion
