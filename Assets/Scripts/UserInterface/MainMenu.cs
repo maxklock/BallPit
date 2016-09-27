@@ -57,6 +57,15 @@ public class MainMenu : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.JoystickButton7))
+        {
+            Exit();
+        }
+    }
+
+    public void Exit()
+    {
+        Application.Quit();
     }
 
     #endregion
