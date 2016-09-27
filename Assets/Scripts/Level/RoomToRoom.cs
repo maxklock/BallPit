@@ -59,7 +59,7 @@ public class RoomToRoom : MonoBehaviour, ILevel
     // Use this for initialization
     void Start()
     {
-        _collectItems = FindObjectsOfType<CollectItems>().Where(c => c.isActiveAndEnabled).ToArray();
+        _collectItems = new CollectItems[0];
         StartCoroutine(OnSpawn());
     }
 
@@ -67,6 +67,15 @@ public class RoomToRoom : MonoBehaviour, ILevel
     void Update()
     {
         if (HasWinner) return;
+
+        if (_collectItems.Length == 0)
+        {
+            _collectItems = FindObjectsOfType<CollectItems>();
+            if (_collectItems.Length > 0)
+            {
+                _collectItems = _collectItems.Where(c => c.isActiveAndEnabled).ToArray();
+            }
+        }
 
         switch (_stRoom)
         {
