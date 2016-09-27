@@ -293,47 +293,47 @@ Prefab:
     - target: {fileID: 224000012617278214, guid: bc06dff534e748949aa01387f57c74b5,
         type: 2}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224000012617278214, guid: bc06dff534e748949aa01387f57c74b5,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224000010080797198, guid: bc06dff534e748949aa01387f57c74b5,
         type: 2}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224000010080797198, guid: bc06dff534e748949aa01387f57c74b5,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224000012251707068, guid: bc06dff534e748949aa01387f57c74b5,
         type: 2}
       propertyPath: m_AnchorMin.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224000012251707068, guid: bc06dff534e748949aa01387f57c74b5,
         type: 2}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224000012251707068, guid: bc06dff534e748949aa01387f57c74b5,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224000011305321710, guid: bc06dff534e748949aa01387f57c74b5,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224000014041941140, guid: bc06dff534e748949aa01387f57c74b5,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bc06dff534e748949aa01387f57c74b5, type: 2}
@@ -604,8 +604,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fee945f1be38d1240bbbaea5a7738f81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player1: {fileID: 1822547724}
-  player2: {fileID: 2042143547}
+  Player1: {fileID: 1822547724}
+  Player2: {fileID: 2042143547}
+  MaxXDistance: 8
   Offset: {x: 0, y: 5, z: -4}
 --- !u!1001 &501820112
 Prefab:
