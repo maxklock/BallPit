@@ -24,7 +24,7 @@ RenderSettings:
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
-  m_AmbientMode: 0
+  m_AmbientMode: 3
   m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
@@ -270,11 +270,11 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114000010998238180, guid: bc06dff534e748949aa01387f57c74b5,
+    - target: {fileID: 114000010634151482, guid: bc06dff534e748949aa01387f57c74b5,
         type: 2}
       propertyPath: Player
       value: 
-      objectReference: {fileID: 2042143547}
+      objectReference: {fileID: 1822547724}
     - target: {fileID: 114000011572603876, guid: bc06dff534e748949aa01387f57c74b5,
         type: 2}
       propertyPath: Spawner
@@ -285,55 +285,65 @@ Prefab:
       propertyPath: Remover
       value: 
       objectReference: {fileID: 1568001378}
-    - target: {fileID: 114000010634151482, guid: bc06dff534e748949aa01387f57c74b5,
+    - target: {fileID: 114000010998238180, guid: bc06dff534e748949aa01387f57c74b5,
         type: 2}
       propertyPath: Player
       value: 
-      objectReference: {fileID: 1822547724}
+      objectReference: {fileID: 2042143547}
     - target: {fileID: 224000012617278214, guid: bc06dff534e748949aa01387f57c74b5,
         type: 2}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224000012617278214, guid: bc06dff534e748949aa01387f57c74b5,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224000010080797198, guid: bc06dff534e748949aa01387f57c74b5,
         type: 2}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224000010080797198, guid: bc06dff534e748949aa01387f57c74b5,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224000012251707068, guid: bc06dff534e748949aa01387f57c74b5,
         type: 2}
       propertyPath: m_AnchorMin.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224000012251707068, guid: bc06dff534e748949aa01387f57c74b5,
         type: 2}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224000012251707068, guid: bc06dff534e748949aa01387f57c74b5,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 224000011305321710, guid: bc06dff534e748949aa01387f57c74b5,
+    - target: {fileID: 224000014041941140, guid: bc06dff534e748949aa01387f57c74b5,
         type: 2}
-      propertyPath: m_AnchorMax.y
-      value: 1
+      propertyPath: m_AnchorMax.x
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224000014041941140, guid: bc06dff534e748949aa01387f57c74b5,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224000011305321710, guid: bc06dff534e748949aa01387f57c74b5,
+        type: 2}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224000011305321710, guid: bc06dff534e748949aa01387f57c74b5,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bc06dff534e748949aa01387f57c74b5, type: 2}
@@ -554,8 +564,8 @@ Camera:
   m_GameObject: {fileID: 454915128}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0.08855968, g: 0.17421784, b: 0.30882353, a: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -607,6 +617,7 @@ MonoBehaviour:
   Player1: {fileID: 1822547724}
   Player2: {fileID: 2042143547}
   MaxXDistance: 8
+  MaxZDistance: 6
   Offset: {x: 0, y: 5, z: -4}
 --- !u!1001 &501820112
 Prefab:
@@ -1069,26 +1080,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1000012589714470, guid: 72db1b2ada510d34496fd3a5916b8735, type: 2}
       propertyPath: m_Name
-      value: Player 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 54000012549210598, guid: 72db1b2ada510d34496fd3a5916b8735,
-        type: 2}
-      propertyPath: m_IsKinematic
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4000013590088656, guid: 72db1b2ada510d34496fd3a5916b8735, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 23000011306679976, guid: 72db1b2ada510d34496fd3a5916b8735,
-        type: 2}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: d8187e7b3a26e2b4fb1c286982da90c0, type: 2}
-    - target: {fileID: 114000014024076012, guid: 72db1b2ada510d34496fd3a5916b8735,
-        type: 2}
-      propertyPath: Color
-      value: 1
+      value: Player Blue
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 72db1b2ada510d34496fd3a5916b8735, type: 2}
@@ -1389,7 +1381,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1000012589714470, guid: 72db1b2ada510d34496fd3a5916b8735, type: 2}
       propertyPath: m_Name
-      value: Player 2
+      value: Player Red
       objectReference: {fileID: 0}
     - target: {fileID: 114000014024076012, guid: 72db1b2ada510d34496fd3a5916b8735,
         type: 2}
@@ -1405,6 +1397,11 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: e3628dc6e55b7d1428b212378fddebc3, type: 2}
+    - target: {fileID: 114000014024076012, guid: 72db1b2ada510d34496fd3a5916b8735,
+        type: 2}
+      propertyPath: Color
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 72db1b2ada510d34496fd3a5916b8735, type: 2}
   m_IsPrefabParent: 0

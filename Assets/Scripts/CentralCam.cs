@@ -24,6 +24,11 @@ public class CentralCam : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
+	    if (!Player1.isActiveAndEnabled && !Player2.isActiveAndEnabled)
+	    {
+	        _cam.transform.position = Offset;
+	        return;
+	    }
 	    if (!Player1.isActiveAndEnabled)
 	    {
 	        _cam.transform.position = Player2.transform.position + Offset;

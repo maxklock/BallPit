@@ -23,6 +23,7 @@ namespace UserInterface
         private void Update()
         {
             WinnerText.text = Winner.ToString();
+            WinnerText.color = Winner == SortColor.Blue ? Color.blue : Color.red;
             if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.JoystickButton7))
             {
                 Restart();
