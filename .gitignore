@@ -31,3 +31,5 @@ sysinfo.txt
 /*.DotSettings
 /ProjectSettings/ProjectSettings.asset
 /ProjectSettings/ProjectVersion.txt
+/Assets/*.pfx
+/Assets/*.pfx.meta
