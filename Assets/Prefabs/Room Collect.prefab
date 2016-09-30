@@ -111,6 +111,8 @@ GameObject:
   - 4: {fileID: 4000013924093836}
   - 114: {fileID: 114000012104237716}
   - 114: {fileID: 114000012797226876}
+  - 114: {fileID: 114000010700929226}
+  - 114: {fileID: 114000010276274618}
   m_Layer: 0
   m_Name: Room Collect
   m_TagString: Untagged
@@ -441,6 +443,29 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114000010276274618
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013341378390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45094b732afcc8b4ab015b7ffbca8888, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114000010700929226
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013341378390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3910b0f4044b8f449b03fb75084b41c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Count: 10
 --- !u!114 &114000012104237716
 MonoBehaviour:
   m_ObjectHideFlags: 1

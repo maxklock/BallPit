@@ -181,6 +181,8 @@ GameObject:
   - 4: {fileID: 4000011228838344}
   - 114: {fileID: 114000013054777390}
   - 114: {fileID: 114000010589912912}
+  - 114: {fileID: 114000012028568906}
+  - 114: {fileID: 114000010563499522}
   m_Layer: 0
   m_Name: Room Sort
   m_TagString: Untagged
@@ -681,6 +683,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Color: 1
+--- !u!114 &114000010563499522
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000014162276402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45094b732afcc8b4ab015b7ffbca8888, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114000010589912912
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -693,6 +706,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Game: 1
+--- !u!114 &114000012028568906
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000014162276402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 040fae0230015654d91ca7f831a2c406, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Count: 10
 --- !u!114 &114000013054777390
 MonoBehaviour:
   m_ObjectHideFlags: 1
