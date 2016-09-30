@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44692534, g: 0.49678725, b: 0.5750856, a: 1}
+  m_IndirectSpecularColor: {r: 0.44692504, g: 0.4967869, b: 0.57508504, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -270,11 +270,11 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114000010634151482, guid: bc06dff534e748949aa01387f57c74b5,
+    - target: {fileID: 114000010998238180, guid: bc06dff534e748949aa01387f57c74b5,
         type: 2}
       propertyPath: Player
       value: 
-      objectReference: {fileID: 1822547724}
+      objectReference: {fileID: 2042143547}
     - target: {fileID: 114000011572603876, guid: bc06dff534e748949aa01387f57c74b5,
         type: 2}
       propertyPath: Spawner
@@ -285,68 +285,64 @@ Prefab:
       propertyPath: Remover
       value: 
       objectReference: {fileID: 1568001378}
-    - target: {fileID: 114000010998238180, guid: bc06dff534e748949aa01387f57c74b5,
+    - target: {fileID: 114000010634151482, guid: bc06dff534e748949aa01387f57c74b5,
         type: 2}
       propertyPath: Player
       value: 
-      objectReference: {fileID: 2042143547}
+      objectReference: {fileID: 1822547724}
     - target: {fileID: 224000012617278214, guid: bc06dff534e748949aa01387f57c74b5,
         type: 2}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224000012617278214, guid: bc06dff534e748949aa01387f57c74b5,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224000010080797198, guid: bc06dff534e748949aa01387f57c74b5,
         type: 2}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224000010080797198, guid: bc06dff534e748949aa01387f57c74b5,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224000012251707068, guid: bc06dff534e748949aa01387f57c74b5,
         type: 2}
       propertyPath: m_AnchorMin.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224000012251707068, guid: bc06dff534e748949aa01387f57c74b5,
         type: 2}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224000012251707068, guid: bc06dff534e748949aa01387f57c74b5,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 224000014041941140, guid: bc06dff534e748949aa01387f57c74b5,
-        type: 2}
-      propertyPath: m_AnchorMax.x
-      value: 0.435
-      objectReference: {fileID: 0}
-    - target: {fileID: 224000014041941140, guid: bc06dff534e748949aa01387f57c74b5,
-        type: 2}
-      propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224000011305321710, guid: bc06dff534e748949aa01387f57c74b5,
         type: 2}
       propertyPath: m_AnchorMax.x
-      value: 0.512
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224000011305321710, guid: bc06dff534e748949aa01387f57c74b5,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1000012000708192, guid: bc06dff534e748949aa01387f57c74b5, type: 2}
-      propertyPath: m_IsActive
+    - target: {fileID: 224000014041941140, guid: bc06dff534e748949aa01387f57c74b5,
+        type: 2}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224000014041941140, guid: bc06dff534e748949aa01387f57c74b5,
+        type: 2}
+      propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
